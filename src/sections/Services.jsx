@@ -83,12 +83,12 @@ const Services = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Our Core <span className="text-blue-600">Offerings</span>
+            Our Core <span className="text-[#084A8D]">Offerings</span>
           </h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-6" />
+          <div className="w-24 h-1 bg-blue-600 mx-auto mb-3" />
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Comprehensive IT solutions designed to empower your business with cutting-edge technology
           </p>
@@ -115,34 +115,22 @@ const Services = () => {
                   </div>
 
                   <div className="relative">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                      <Icon className="text-white" size={32} />
-                    </div>
+                    <div className="flex items-center gap-3 mb-4">
+  <div className={`w-12 h-12 bg-gradient-to-br ${service.gradient} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+    <Icon className="text-white" size={22} />
+  </div>
 
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
-                      {service.title}
-                    </h3>
+  <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+    {service.title}
+  </h3>
+</div>
+
 
                     <p className="text-gray-600 leading-relaxed">
                       {service.description}
                     </p>
 
-                    <div className="mt-6 flex items-center text-blue-600 font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-0 group-hover:translate-x-2">
-                      <span className="text-sm">Learn more</span>
-                      <svg
-                        className="w-4 h-4 ml-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </div>
+                    
                   </div>
 
                   <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-600 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -158,11 +146,7 @@ const Services = () => {
           transition={{ delay: 0.6, duration: 0.6 }}
           className="mt-16 text-center"
         >
-          <div className="inline-block bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-100">
-            <p className="text-lg text-gray-700 max-w-2xl">
-              <span className="font-semibold text-blue-600">Need a custom solution?</span> Our team of experts is ready to discuss your unique requirements and design a tailored IT strategy.
-            </p>
-          </div>
+          
         </motion.div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import logo from '../assets/logo.jpg';
 
 const Home = () => {
   const scrollToSection = (id) => {
@@ -35,16 +36,6 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="absolute inset-0 opacity-5">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
-      </div>
 
       {[...Array(20)].map((_, i) => (
         <motion.div
@@ -68,7 +59,10 @@ const Home = () => {
       ))}
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        
+        {/* UPDATED HERE --> items-start instead of items-center */}
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -86,7 +80,7 @@ const Home = () => {
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
               <span className="block">Savvy Spectra</span>
-              <span className="block text-blue-600">Solutions</span>
+              <span className="block text-[#084A8D]">Solutions</span>
             </h1>
 
             <p className="text-xl sm:text-2xl text-gray-600 mb-4 font-medium">
@@ -103,7 +97,8 @@ const Home = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection('services')}
-                className="inline-flex items-center justify-center space-x-2 bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl"
+               className="inline-flex items-center justify-center space-x-2 bg-[#0A57A3] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#084A8D] transition-all shadow-lg hover:shadow-xl"
+
               >
                 <span>Explore Our Services</span>
                 <ArrowRight size={20} />
@@ -120,48 +115,26 @@ const Home = () => {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative hidden lg:block"
-          >
+          {/* RIGHT SIDE - COMPANY LOGO */}
             <motion.div
-              animate={floatingAnimation}
-              className="relative z-10"
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="relative flex items-start justify-center mt-14 rounded-3xl overflow-hidden"
             >
-              <div className="relative w-full h-96 rounded-2xl overflow-hidden shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-500 to-purple-600 opacity-90" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-white p-8">
-                    <div className="grid grid-cols-2 gap-8">
-                      <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                        <div className="text-4xl font-bold mb-2">500+</div>
-                        <div className="text-sm">Clients Served</div>
-                      </div>
-                      <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                        <div className="text-4xl font-bold mb-2">24/7</div>
-                        <div className="text-sm">Support</div>
-                      </div>
-                      <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                        <div className="text-4xl font-bold mb-2">15+</div>
-                        <div className="text-sm">Years Experience</div>
-                      </div>
-                      <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                        <div className="text-4xl font-bold mb-2">100%</div>
-                        <div className="text-sm">Client Satisfaction</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <motion.img
+              animate={floatingAnimation}
+              src={logo}
+              alt="company logo"
+              className="w-[430px] h-[430px] object-contain drop-shadow-xl rounded-2xl"
+            />
+
+
+
             </motion.div>
 
-            <div className="absolute -bottom-6 -right-6 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-pulse" />
-            <div className="absolute -top-6 -left-6 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-pulse animation-delay-2000" />
-          </motion.div>
+          </div>
         </div>
-      </div>
 
       <style>{`
         @keyframes blob {

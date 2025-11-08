@@ -103,64 +103,53 @@ const Contact = () => {
 
 
   const contactInfo = [
-    {
-      icon: MapPin,
-      title: 'Visit Us',
-      content: 'FO-02, 4th Floor, 28/A, Smart Avenue, 80Feet Rd, Indiranagar, Bangalore - 560038',
-      color: 'blue',
-    },
-    {
-      icon: Phone,
-      title: 'Call Us',
-      content: '+91 97395 32183',
-      link: 'tel:+919739532183',
-      color: 'green',
-    },
-    {
-      icon: Mail,
-      title: 'Email Us',
-      content: 'sivakumar@savvyspectra.com',
-      link: 'mailto:sivakumar@savvyspectra.com',
-      color: 'purple',
-    },
-  ];
+  {
+    icon: MapPin,
+    title: 'Visit Us',
+    content: 'FO-02, 4th Floor, 28/A, Smart Avenue, 80Feet Rd, Indiranagar, Bangalore - 560038',
+    color: 'blue',
+  },
+  {
+    icon: Phone,
+    title: 'Call Us',
+    content: '+91 97395 32183',
+    link: 'tel:+919739532183',
+    color: 'blue',   // <--- changed here
+  },
+  {
+    icon: Mail,
+    title: 'Email Us',
+    content: 'sivakumar@savvyspectra.com',
+    link: 'mailto:sivakumar@savvyspectra.com',
+    color: 'blue',   // OPTIONAL recommended also blue for enterprise uniform
+  },
+];
 
-  const colorVariants = {
-    blue: 'from-blue-500 to-blue-600',
-    green: 'from-green-500 to-green-600',
-    purple: 'from-purple-500 to-purple-600',
-  };
+const colorVariants = {
+  blue: 'from-[#0A57A3] to-[#084A8D]',
+};
+
 
   return (
-    <section id="contact" className="relative py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
-      <div className="absolute inset-0 opacity-5">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="contact-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#contact-grid)" />
-        </svg>
-      </div>
+  <section id="contact" className="pt-4 pb-8 bg-white">
 
       <div ref={ref} className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Get in <span className="text-blue-600">Touch</span>
+            Get in <span className="text-[#084A8D]">Touch</span>
           </h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto mb-6" />
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Ready to transform your IT infrastructure? Let's discuss how we can help your business thrive
-          </p>
+          
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+
+
           {contactInfo.map((info, index) => {
             const Icon = info.icon;
             return (
@@ -172,21 +161,28 @@ const Contact = () => {
                 className="group"
               >
                 <div className="h-full bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
-                  <div className={`w-14 h-14 bg-gradient-to-br ${colorVariants[info.color]} rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md`}>
-                    <Icon className="text-white" size={24} />
+
+                  <div className="flex justify-between items-center mb-3">
+                    <h3 className="text-lg font-bold text-gray-900">{info.title}</h3>
+
+                    <div className={`w-10 h-10 bg-gradient-to-br ${colorVariants[info.color]} rounded-lg flex items-center justify-center shadow-md`}>
+                      <info.icon className="text-white" size={18} />
+                    </div>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{info.title}</h3>
+
                   {info.link ? (
                     <a
                       href={info.link}
-                      className="text-gray-600 hover:text-blue-600 transition-colors block"
+                      className="text-gray-600 hover:text-blue-600 transition-colors block leading-relaxed"
                     >
                       {info.content}
                     </a>
                   ) : (
-                    <p className="text-gray-600">{info.content}</p>
+                    <p className="text-gray-600 leading-relaxed">{info.content}</p>
                   )}
+
                 </div>
+
               </motion.div>
             );
           })}
@@ -196,7 +192,9 @@ const Contact = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="bg-white rounded-2xl shadow-2xl p-8 sm:p-12 border border-gray-100"
+          className="bg-white rounded-2xl shadow-2xl p-4 sm:p-5 border border-gray-100"
+
+
         >
           {submitted && (
             <motion.div
@@ -211,10 +209,10 @@ const Contact = () => {
             </motion.div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid sm:grid-cols-2 gap-6">
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="grid sm:grid-cols-2 gap-3">
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-1">
                   Name <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -223,7 +221,7 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 rounded-lg border ${
+                  className={`w-full px-4 py-1.5 rounded-lg border ${
                     errors.name ? 'border-red-300 focus:border-red-500' : 'border-gray-300 focus:border-blue-500'
                   } focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all`}
                   placeholder="Your full name"
@@ -241,7 +239,7 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 rounded-lg border ${
+                  className={`w-full px-4 py-1.5 rounded-lg border ${
                     errors.email ? 'border-red-300 focus:border-red-500' : 'border-gray-300 focus:border-blue-500'
                   } focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all`}
                   placeholder="your.email@example.com"
@@ -259,7 +257,7 @@ const Contact = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 rounded-lg border ${
+                  className={`w-full px-4 py-1.5 rounded-lg border ${
                     errors.phone ? 'border-red-300 focus:border-red-500' : 'border-gray-300 focus:border-blue-500'
                   } focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all`}
                   placeholder="+91 98765 43210"
@@ -277,7 +275,7 @@ const Contact = () => {
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all"
+                  className="w-full px-4 py-1.5 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all"
                   placeholder="Your company name"
                 />
               </div>
@@ -292,8 +290,8 @@ const Contact = () => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                rows={5}
-                className={`w-full px-4 py-3 rounded-lg border ${
+                rows={2}
+                className={`w-full px-4 py-2 rounded-lg border ${
                   errors.message ? 'border-red-300 focus:border-red-500' : 'border-gray-300 focus:border-blue-500'
                 } focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all resize-none`}
                 placeholder="Tell us about your requirements..."
@@ -306,7 +304,7 @@ const Contact = () => {
               disabled={isSubmitting}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-[#084A8D] to-[#084A8D] text-white px-6 py-3 rounded-lg font-semibold hover:from-[#084A8D] hover:to-[#084A8D] transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
                 <>

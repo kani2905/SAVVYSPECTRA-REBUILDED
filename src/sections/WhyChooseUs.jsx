@@ -107,7 +107,7 @@ const WhyChooseUs = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Why Choose <span className="text-blue-600">Savvy Spectra</span>
+            Why Choose <span className="text-[#084A8D]">Savvy Spectra</span>
           </h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto mb-6" />
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -131,19 +131,21 @@ const WhyChooseUs = () => {
                 className="group relative"
               >
                 <div className={`relative h-full bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl ${hoverColorVariants[feature.color]} transition-all duration-300 border border-gray-100`}>
-                  <div className="relative">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${colorVariants[feature.color]} rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon className="text-white" size={28} />
+                  <div className="relative flex items-start gap-4">
+                    <div className={`w-12 h-12 bg-gradient-to-br ${colorVariants[feature.color]} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 shrink-0`}>
+                      <Icon className="text-white" size={22} />
                     </div>
 
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">
-                      {feature.title}
-                    </h3>
-
-                    <p className="text-gray-600 leading-relaxed">
-                      {feature.description}
-                    </p>
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900 mb-2">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed text-sm">
+                        {feature.description}
+                      </p>
+                    </div>
                   </div>
+
 
                   <div className={`absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r ${colorVariants[feature.color]} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-b-2xl`} />
                 </div>
@@ -152,49 +154,7 @@ const WhyChooseUs = () => {
           })}
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 1, duration: 0.6 }}
-          className="mt-16"
-        >
-          <div className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700 rounded-2xl p-12 shadow-2xl overflow-hidden">
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute -top-24 -right-24 w-96 h-96 bg-white rounded-full filter blur-3xl" />
-              <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-white rounded-full filter blur-3xl" />
-            </div>
-
-            <div className="relative grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h3 className="text-3xl font-bold text-white mb-4">
-                  Ready to Transform Your IT Infrastructure?
-                </h3>
-                <p className="text-blue-100 leading-relaxed text-lg">
-                  Partner with Savvy Spectra Solutions and experience the difference that true IT expertise makes. Let's build your digital future together.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
-                  <div className="text-4xl font-bold text-white mb-2">99.9%</div>
-                  <div className="text-sm text-blue-100">Uptime SLA</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
-                  <div className="text-4xl font-bold text-white mb-2">&lt;15m</div>
-                  <div className="text-sm text-blue-100">Response Time</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
-                  <div className="text-4xl font-bold text-white mb-2">500+</div>
-                  <div className="text-sm text-blue-100">Happy Clients</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
-                  <div className="text-4xl font-bold text-white mb-2">100%</div>
-                  <div className="text-sm text-blue-100">Satisfaction</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+        
       </div>
     </section>
   );

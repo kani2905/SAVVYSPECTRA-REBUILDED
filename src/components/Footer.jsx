@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   const scrollToSection = (id) => {
@@ -18,43 +18,18 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 items-start">
+
+          {/* Brand */}
           <div>
             <h3 className="text-2xl font-bold text-blue-400 mb-4">Savvy Spectra Solutions</h3>
             <p className="text-gray-300 mb-4 text-sm leading-relaxed">
               Empowering businesses with smart, scalable, and secure IT solutions across India.
             </p>
-            <div className="flex space-x-4">
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center hover:bg-blue-500 transition-all duration-300"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={20} />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center hover:bg-blue-400 transition-all duration-300"
-                aria-label="Twitter"
-              >
-                <Twitter size={20} />
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center hover:bg-blue-600 transition-all duration-300"
-                aria-label="Facebook"
-              >
-                <Facebook size={20} />
-              </a>
-            </div>
           </div>
 
+          {/* Quick Links */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <nav className="space-y-2">
@@ -70,6 +45,7 @@ const Footer = () => {
             </nav>
           </div>
 
+          {/* Contact Info */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
             <div className="space-y-3">
@@ -95,6 +71,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
+
         </div>
 
         <div className="border-t border-gray-700 pt-8 text-center">
@@ -102,6 +79,7 @@ const Footer = () => {
             © {new Date().getFullYear()} Savvy Spectra Solutions Private Limited. All rights reserved.
           </p>
         </div>
+
       </div>
     </footer>
   );
