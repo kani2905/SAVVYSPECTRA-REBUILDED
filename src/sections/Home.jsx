@@ -74,8 +74,7 @@ const Home = () => {
               transition={{ delay: 0.2 }}
               className="inline-flex items-center space-x-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-6"
             >
-              <Sparkles size={16} />
-              <span>Leading IT Solutions Provider</span>
+              
             </motion.div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
