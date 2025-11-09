@@ -26,7 +26,7 @@ const Footer = () => {
 
           {/* Brand */}
 <div className="pl-16">     
-  <h3 className="text-2xl font-bold text-blue-400 mb-4">Savvy Spectra Solutions</h3>
+  <h3 className="text-2xl font-bold text-blue-400 mb-4">Savvy Spectra Solutions Private Limited</h3>
   <p className="text-gray-300 mb-4 text-sm leading-relaxed">
     Empowering businesses with smart, scalable, and secure IT solutions across India.
   </p>
