@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const ref = useRef(null);
@@ -67,20 +68,20 @@ const Contact = () => {
     emailjs
       .send(
         'service_8sleh8m', // 🔹 your EmailJS service ID
-        'template_oyf6uiv', // 🔹 your EmailJS template ID
+        'template_vum7p0z', // 🔹 your EmailJS template ID
         {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          company: formData.company,
-          message: formData.message,
-        },
+  name: formData.name,
+  email: formData.email,
+  phone: formData.phone,
+  company: formData.company,
+  message: formData.message,
+},
         'j_fv3k-w38X4FuSwI' // 🔹 your EmailJS public key
       )
       .then(
         (result) => {
           console.log('Email sent successfully:', result.text);
-          setIsSubmitted(true); // show success message
+          setSubmitted(true);; // show success message
           setFormData({
             name: '',
             email: '',
@@ -89,9 +90,10 @@ const Contact = () => {
             message: '',
           });
           // hide message after 5 seconds
-          setTimeout(() => {
-            setIsSubmitted(false);
-          }, 5000);
+         setTimeout(() => {
+  setSubmitted(false)
+}, 5000);
+
         },
         (error) => {
           console.error('Email sending failed:', error.text);
