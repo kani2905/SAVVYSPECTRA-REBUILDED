@@ -102,32 +102,38 @@ const Contact = () => {
 };
 
 
-  const contactInfo = [
+   const contactInfo = [
   {
     icon: MapPin,
     title: 'Visit Us',
     content: 'FO-02, 4th Floor, 28/A, Smart Avenue, 80Feet Rd, Indiranagar, Bangalore - 560038',
-    color: 'blue',
+    color: 'purple',
   },
   {
     icon: Phone,
     title: 'Call Us',
     content: '+91 97395 32183',
     link: 'tel:+919739532183',
-    color: 'blue',   // <--- changed here
+    color: 'orange',
   },
   {
     icon: Mail,
     title: 'Email Us',
     content: 'sivakumar@savvyspectra.com',
     link: 'mailto:sivakumar@savvyspectra.com',
-    color: 'blue',   // OPTIONAL recommended also blue for enterprise uniform
-  },
+    color: 'green',
+  }
 ];
+
 
 const colorVariants = {
   blue: 'from-[#0A57A3] to-[#084A8D]',
+  purple: 'from-[#6A0DAD] to-[#520A8A]',
+  orange: 'from-[#FF9500] to-[#CC7700]',
+  green: 'from-[#00A36C] to-[#007F52]',
+  red: 'from-[#E63946] to-[#C5303C]',
 };
+
 
 
   return (
@@ -166,8 +172,9 @@ const colorVariants = {
                     <h3 className="text-lg font-bold text-gray-900">{info.title}</h3>
 
                     <div className={`w-10 h-10 bg-gradient-to-br ${colorVariants[info.color]} rounded-lg flex items-center justify-center shadow-md`}>
-                      <info.icon className="text-white" size={18} />
-                    </div>
+  <info.icon className="text-white" size={18} />
+</div>
+
                   </div>
 
                   {info.link ? (

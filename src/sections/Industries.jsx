@@ -15,49 +15,56 @@ import {
 const Industries = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const industries = [
-    {
-      icon: Monitor,
-      title: 'IT & ITeS',
-      description: 'Technology infrastructure for software and service companies',
-    },
-    {
-      icon: Building2,
-      title: 'BFSI',
-      description: 'Secure solutions for banking and financial institutions',
-    },
-    {
-      icon: Factory,
-      title: 'Manufacturing',
-      description: 'Industry 4.0 solutions for smart manufacturing',
-    },
-    {
-      icon: GraduationCap,
-      title: 'Education',
-      description: 'Digital infrastructure for educational institutions',
-    },
-    {
-      icon: Heart,
-      title: 'Healthcare',
-      description: 'HIPAA-compliant IT solutions for medical facilities',
-    },
-    {
-      icon: ShoppingBag,
-      title: 'Retail',
-      description: 'Omnichannel technology for retail businesses',
-    },
-    {
-      icon: Rocket,
-      title: 'Startups & SMBs',
-      description: 'Scalable IT solutions for growing businesses',
-    },
-    {
-      icon: Radio,
-      title: 'Telecommunication',
-      description: 'Robust infrastructure for telecom service providers',
-    },
-  ];
+const industries = [
+  {
+    icon: Monitor,
+    title: 'IT & ITeS',
+    description: 'Technology infrastructure for software and service companies',
+    color: 'from-blue-500 to-blue-600'
+  },
+  {
+    icon: Building2,
+    title: 'BFSI',
+    description: 'Secure solutions for banking and financial institutions',
+    color: 'from-purple-500 to-purple-600'
+  },
+  {
+    icon: Factory,
+    title: 'Manufacturing',
+    description: 'Industry 4.0 solutions for smart manufacturing',
+    color: 'from-amber-500 to-amber-600'
+  },
+  {
+    icon: GraduationCap,
+    title: 'Education',
+    description: 'Digital infrastructure for educational institutions',
+    color: 'from-emerald-500 to-emerald-600'
+  },
+  {
+    icon: Heart,
+    title: 'Healthcare',
+    description: 'HIPAA-compliant IT solutions for medical facilities',
+    color: 'from-rose-500 to-rose-600'
+  },
+  {
+    icon: ShoppingBag,
+    title: 'Retail',
+    description: 'Omnichannel technology for retail businesses',
+    color: 'from-orange-500 to-orange-600'
+  },
+  {
+    icon: Rocket,
+    title: 'Startups & SMBs',
+    description: 'Scalable IT solutions for growing businesses',
+    color: 'from-indigo-500 to-indigo-600'
+  },
+  {
+    icon: Radio,
+    title: 'Telecommunication',
+    description: 'Robust infrastructure for telecom service providers',
+    color: 'from-cyan-500 to-cyan-600'
+  },
+];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -119,9 +126,10 @@ const Industries = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-600/0 to-purple-600/0 group-hover:from-blue-600/5 group-hover:to-purple-600/5 rounded-xl transition-all duration-300" />
 
                   <div className="relative flex flex-col items-center text-center">
-                    <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-blue-200">
-                      <Icon className="text-white" size={24} />
-                    </div>
+                    <div className={`w-14 h-14 bg-gradient-to-br ${industry.color} rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+  <Icon className="text-white" size={24} />
+</div>
+
 
                     <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                       {industry.title}
