@@ -66,8 +66,8 @@ const Contact = () => {
   if (validateForm()) {
     emailjs
       .send(
-        'YOUR_SERVICE_ID', // 🔹 your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // 🔹 your EmailJS template ID
+        'service_8sleh8m', // 🔹 your EmailJS service ID
+        'template_oyf6uiv', // 🔹 your EmailJS template ID
         {
           name: formData.name,
           email: formData.email,
@@ -75,7 +75,7 @@ const Contact = () => {
           company: formData.company,
           message: formData.message,
         },
-        'YOUR_PUBLIC_KEY' // 🔹 your EmailJS public key
+        'j_fv3k-w38X4FuSwI' // 🔹 your EmailJS public key
       )
       .then(
         (result) => {
