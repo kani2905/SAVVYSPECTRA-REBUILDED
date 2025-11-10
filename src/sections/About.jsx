@@ -50,7 +50,7 @@ const About = () => {
               icon: <Eye className="text-white" size={28} />,
               bg: "from-purple-50 to-white border-purple-100",
               title: "Our Vision",
-              text: "To be recognized as India’s most trusted IT partner by driving digital transformation seamlessly."
+              text: "To serve as the secure and strategic backbone for our clients, reliably translating complexity into competitive advantage."
             },
             {
               icon: <MapPin className="text-white" size={28} />,
