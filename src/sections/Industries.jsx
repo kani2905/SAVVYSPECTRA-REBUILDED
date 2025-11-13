@@ -86,7 +86,7 @@ const industries = [
   };
 
   return (
-    <section id="industries" className="relative py-20 bg-white overflow-hidden">
+    <section id="industries" className="relative py-6 bg-white overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 opacity-50" />
 
     
@@ -96,7 +96,7 @@ const industries = [
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-8"
+          className="text-center mb-6"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Industries We <span className="text-[#084A8D]">Serve</span>

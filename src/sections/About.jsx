@@ -8,7 +8,9 @@ const About = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-   <section id="about" className="relative py-16 bg-white overflow-hidden">
+   // About.jsx
+<section id="about" className="relative py-20 bg-white overflow-hidden">
+
 
       <div ref={ref} className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -16,7 +18,7 @@ const About = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-3">
             About <span className="text-[#084A8D]">Savvy Spectra Solutions</span>

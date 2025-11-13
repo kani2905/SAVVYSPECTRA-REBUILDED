@@ -91,7 +91,7 @@ const WhyChooseUs = () => {
   };
 
   return (
-    <section id="why-choose-us" className="relative py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    <section id="why-choose-us" className="relative py-6 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-400 rounded-full filter blur-3xl" />
@@ -104,7 +104,7 @@ const WhyChooseUs = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Why Choose <span className="text-[#084A8D]">Savvy Spectra</span>

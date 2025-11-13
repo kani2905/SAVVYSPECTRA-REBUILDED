@@ -66,7 +66,9 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="relative py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    // Services.jsx
+<section id="services" className="relative py-8 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+
       <div className="absolute inset-0 opacity-5">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -83,7 +85,7 @@ const Services = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-8"
+          className="text-center mb-2"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Our Core <span className="text-[#084A8D]">Offerings</span>
